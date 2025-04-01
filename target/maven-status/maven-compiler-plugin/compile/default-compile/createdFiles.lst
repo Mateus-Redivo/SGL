@@ -1,8 +1,0 @@
-model\Emprestimo.class
-view\LivroView.class
-Main.class
-controller\LivroController.class
-controller\UsuarioController.class
-model\Livro.class
-model\Usuario.class
-controller\EmprestimoController.class
