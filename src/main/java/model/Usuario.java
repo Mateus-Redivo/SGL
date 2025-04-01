@@ -35,13 +35,17 @@ public class Usuario {
              PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             
             pstmt.setString(1, this.nome);
-            pstmt.executeUpdate();
+            int affectedRows = pstmt.executeUpdate();
             
-            ResultSet rs = pstmt.getGeneratedKeys();
-            if (rs.next()) {
-                this.idUsuario = rs.getInt(1);
+            if (affectedRows > 0) {
+                try (ResultSet rs = pstmt.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        this.idUsuario = rs.getInt(1);
+                    }
+                }
             }
         } catch (SQLException e) {
+            System.out.println("Erro ao salvar usuario: " + e.getMessage());
             e.printStackTrace();
         }
     }

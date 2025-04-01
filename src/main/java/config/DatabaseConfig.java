@@ -18,7 +18,7 @@ public class DatabaseConfig {
             
             // Criar tabela de usuários
             stmt.execute("CREATE TABLE IF NOT EXISTS usuarios (" +
-                        "id INTEGER PRIMARY KEY," +
+                        "id INTEGER PRIMARY KEY," + // SQLite usa AUTOINCREMENT implícito
                         "nome TEXT NOT NULL)");
             
             // Criar tabela de livros
