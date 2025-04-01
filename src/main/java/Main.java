@@ -14,6 +14,9 @@ public class Main {
         // Inicializar o banco de dados
         DatabaseConfig.initDatabase();
         
+        // Para limpar o banco de dados, descomente a linha abaixo:
+        //DatabaseConfig.limparBancoDados();
+        
         // Teste dos metodos com valores predefinidos
         System.out.println("Testando cadastro de usuario: " + cadastrarUsuario());
         System.out.println("Testando cadastro de livro: " + cadastrarLivro());
@@ -129,5 +132,16 @@ public class Main {
 
     private static boolean listarEmprestimos() {
         return true; // Retorna true indicando que a operacao foi realizada
+    }
+    
+    // Método auxiliar para limpar o banco de dados
+    private static void limparDados() {
+        try {
+            DatabaseConfig.limparBancoDados();
+            System.out.println("Todas as informações foram removidas do banco de dados.");
+        } catch (Exception e) {
+            System.out.println("Erro ao limpar dados: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }
