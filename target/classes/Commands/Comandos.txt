@@ -1,0 +1,57 @@
+# Instalação e Configuração do Maven e JDBC
+
+## Instalação do Maven
+1. Baixe o Maven em: https://maven.apache.org/download.cgi
+2. Extraia para um diretório (exemplo: C:\Program Files\Apache\maven)
+3. Configure as Variáveis de Ambiente do Sistema:
+   - MAVEN_HOME = C:\Program Files\Apache\maven
+   - Adicione ao Path: %MAVEN_HOME%\bin
+
+## Verificar Instalação do Maven
+```bash
+mvn -version
+```
+
+## Adicionar Dependência JDBC no pom.xml
+```xml
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.33</version>
+</dependency>
+```
+
+## Comandos Maven Básicos
+```bash
+mvn clean install     # Limpa o projeto e instala dependências
+mvn exec:java        # Executa a aplicação Java
+mvn package          # Cria arquivo JAR
+mvn test            # Executa os testes
+```
+
+## Exemplo de String de Conexão com Banco
+```java
+jdbc:mysql://localhost:3306/seu_banco
+```
+
+## Variáveis de Ambiente Necessárias
+- JAVA_HOME (apontando para instalação do JDK)
+- MAVEN_HOME
+- Path (incluindo diretórios bin do Java e Maven)
+
+## Solução de Problemas
+```bash
+# Verificar instalação do Java
+java -version
+
+# Verificar instalação do Maven
+mvn -version
+
+# Verificar conexão com banco de dados
+telnet localhost 3306
+```
+
+## Notas Importantes
+- Certifique-se que o JDK está instalado antes de instalar o Maven
+- Reinicie o computador após configurar as variáveis de ambiente
+- Verifique se o serviço do MySQL está rodando antes de tentar conexões
