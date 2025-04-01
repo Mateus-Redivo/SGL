@@ -42,4 +42,30 @@ public class DatabaseConfig {
             e.printStackTrace();
         }
     }
+    
+    public static void limparBancoDados() {
+        try (Connection conn = getConnection();
+             Statement stmt = conn.createStatement()) {
+            
+            // Desabilitar verificação de chaves estrangeiras temporariamente
+            stmt.execute("PRAGMA foreign_keys = OFF;");
+            
+            // Limpar todas as tabelas
+            stmt.execute("DELETE FROM emprestimos;");
+            stmt.execute("DELETE FROM livros;");
+            stmt.execute("DELETE FROM usuarios;");
+            
+            // Resetar os contadores de autoincremento
+            stmt.execute("DELETE FROM sqlite_sequence WHERE name IN ('emprestimos', 'livros', 'usuarios');");
+            
+            // Reabilitar verificação de chaves estrangeiras
+            stmt.execute("PRAGMA foreign_keys = ON;");
+            
+            System.out.println("Banco de dados limpo com sucesso!");
+            
+        } catch (SQLException e) {
+            System.out.println("Erro ao limpar banco de dados: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
 }
