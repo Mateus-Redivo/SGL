@@ -1,11 +1,11 @@
-package main.java.com.SGL.app;
+package main.java.com.sgl.app;
 
-import main.java.com.SGL.controller.EmprestimoController;
-import main.java.com.SGL.controller.UsuarioController;
-import main.java.com.SGL.controller.LivroController;
-import main.java.com.SGL.model.Livro;
-import main.java.com.SGL.model.Usuario;
-import main.java.com.SGL.model.Emprestimo;
+import main.java.com.sgl.controller.EmprestimoController;
+import main.java.com.sgl.controller.UsuarioController;
+import main.java.com.sgl.controller.LivroController;
+import main.java.com.sgl.model.Livro;
+import main.java.com.sgl.model.Usuario;
+import main.java.com.sgl.model.Emprestimo;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;

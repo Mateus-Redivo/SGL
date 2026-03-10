@@ -1,8 +1,9 @@
-package main.java.com.SGL.model;
+package main.java.com.sgl.model;
 
 import java.util.Date;
 
 public class Emprestimo {
+
     private Livro livro;
     private Usuario usuario;
     private Date dataEmprestimo;

@@ -1,6 +1,7 @@
-package main.java.com.SGL.model;
+package main.java.com.sgl.model;
 
 public class Livro {
+
     private String titulo;
     private String autor;
     private int anoPublicacao;

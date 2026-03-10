@@ -1,8 +1,9 @@
-package main.java.com.SGL.view;
+package main.java.com.sgl.view;
 
-import main.java.com.SGL.model.Livro;
+import main.java.com.sgl.model.Livro;
 
 public class LivroView {
+
     public void exibirLivro(Livro livro) {
         System.out.println("Livro: " + livro.getTitulo());
         System.out.println("Autor: " + livro.getAutor());

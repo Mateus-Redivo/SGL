@@ -1,8 +1,8 @@
-package main.java.com.SGL.controller;
+package main.java.com.sgl.controller;
 
-import main.java.com.SGL.model.Emprestimo;
-import main.java.com.SGL.model.Livro;
-import main.java.com.SGL.model.Usuario;
+import main.java.com.sgl.model.Emprestimo;
+import main.java.com.sgl.model.Livro;
+import main.java.com.sgl.model.Usuario;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;

@@ -1,6 +1,6 @@
-package main.java.com.SGL.controller;
+package main.java.com.sgl.controller;
 
-import main.java.com.SGL.model.Livro;
+import main.java.com.sgl.model.Livro;
 import java.util.ArrayList;
 import java.util.List;
 

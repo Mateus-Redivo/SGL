@@ -1,6 +1,7 @@
-package main.java.com.SGL.model;
+package main.java.com.sgl.model;
 
 public class Usuario {
+
     private String nome;
     private int idUsuario;
 
