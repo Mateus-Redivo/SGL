@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 public class EmprestimoController {
+
     private List<Emprestimo> emprestimos = new ArrayList<>();
 
     // Método para realizar um empréstimo
@@ -35,10 +36,10 @@ public class EmprestimoController {
             return;
         }
         System.out.println("Lista de Empréstimos:");
-        for (Emprestimo e : emprestimos) {
-            System.out.println("Livro: " + e.getLivro().getTitulo() +
-                    " | Usuário: " + e.getUsuario().getNome() +
-                    " | Data de Devolução: " + e.getDataDevolucao());
+        for (Emprestimo emprestimo : emprestimos) {
+            System.out.println("Livro: " + emprestimo.getLivro().getTitulo() +
+                    " | Usuário: " + emprestimo.getUsuario().getNome() +
+                    " | Data de Devolução: " + emprestimo.getDataDevolucao());
         }
     }
 }
