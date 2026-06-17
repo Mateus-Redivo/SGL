@@ -1,43 +1,49 @@
 package main.java.com.sgl.controller;
 
-import main.java.com.sgl.model.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 
+import main.java.com.sgl.model.Usuario;
+
 public class UsuarioController {
+
     private List<Usuario> usuarios = new ArrayList<>();
 
-    // Método para adicionar um novo usuário
+    // ENDPOINT POST - Adicionar usuario
+
     public void adicionarUsuario(Usuario usuario) {
         usuarios.add(usuario);
-        System.out.println("Usuário " + usuario.getNome() + " cadastrado com sucesso!");
+        System.out.println("Usuario: " + usuario.getNome() + " foi adicionado");
     }
 
-    // Método para buscar um usuário pelo ID
-    public Usuario buscarUsuario(int idUsuario) {
+    // ENDPOINT GET (BY ID) - Busca usuario por ID
+
+    public Usuario buscaUsuario(int idUsuario) {
         for (Usuario usuario : usuarios) {
-            if (usuario.getIdUsuario() == idUsuario) {
+            if (idUsuario == usuario.getIdUsuario()) {
                 return usuario;
             }
         }
-        System.out.println("Usuário não encontrado.");
+        System.out.println("Usuario nao cadastrado");
         return null;
     }
 
-    // Método para listar todos os usuários cadastrados
-    public void listarUsuarios() {
+    // ENDPOINT GET - Busca todos os usuario
+
+    public void listarUsuario() {
         if (usuarios.isEmpty()) {
-            System.out.println("Nenhum usuário cadastrado.");
+            System.out.println("Nenhum usuario cadastrado");
             return;
         }
-        System.out.println("Lista de Usuários:");
+        System.out.println("Lista de usuarios :");
         for (Usuario usuario : usuarios) {
-            System.out.println("ID: " + usuario.getIdUsuario() + " | Nome: " + usuario.getNome());
+            System.out.println("ID " + usuario.getIdUsuario()
+                    + "| Nome: " + usuario.getNome());
         }
     }
-    
-    // Método para obter a lista de usuários
-    public List<Usuario> obterUsuarios() {
+
+    //Metodo para obter a lista de usuarios
+    public List<Usuario> obterUsuarios(){
         return usuarios;
     }
 }

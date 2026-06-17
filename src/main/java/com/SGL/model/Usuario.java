@@ -27,4 +27,5 @@ public class Usuario {
     }
 
     // Construtores, getters, setters e métodos adicionais
+
 }

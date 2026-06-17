@@ -4,9 +4,9 @@ import main.java.com.sgl.model.Livro;
 
 public class LivroView {
 
-    public void exibirLivro(Livro livro) {
+    public void exibirLivro(Livro livro){
         System.out.println("Livro: " + livro.getTitulo());
         System.out.println("Autor: " + livro.getAutor());
-        System.out.println("Ano de Publicação: " + livro.getAnoPublicacao());
+        System.out.println("Ano de publicacao: " + livro.getAnoPublicacao());
     }
 }

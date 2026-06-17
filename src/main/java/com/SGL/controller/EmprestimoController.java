@@ -1,25 +1,41 @@
 package main.java.com.sgl.controller;
 
 import main.java.com.sgl.model.Emprestimo;
-import main.java.com.sgl.model.Livro;
 import main.java.com.sgl.model.Usuario;
+import main.java.com.sgl.model.Livro;
+
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class EmprestimoController {
 
     private List<Emprestimo> emprestimos = new ArrayList<>();
 
-    // Método para realizar um empréstimo
+    // POST - Realizar emprestimo
     public void realizarEmprestimo(Livro livro, Usuario usuario, Date dataEmprestimo, Date dataDevolucao) {
         Emprestimo novoEmprestimo = new Emprestimo(livro, usuario, dataEmprestimo, dataDevolucao);
         emprestimos.add(novoEmprestimo);
-        System.out.println("Empréstimo realizado com sucesso!");
+        System.out.println("Emprestimo realizado");
     }
 
-    // Método para buscar empréstimos de um usuário
-    public List<Emprestimo> buscarEmprestimosPorUsuario(int idUsuario) {
+    // GET - Lista todos os emprestimos
+    public void listarEmprestimos() {
+        if (emprestimos.isEmpty()) {
+            System.out.println("Nao temos emprestimos realizados");
+            return;
+        }
+        System.out.println("Lista de emprestimos");
+        for (Emprestimo e : emprestimos) {
+            System.out.println("Livro: " + e.getLivro().getTitulo() +
+                    " | Usuario: " + e.getUsuario().getNome() +
+                    " | Data de devolucao: " + e.getDataDevolucao());
+        }
+    }
+
+    // GET - Busca emprestimo por usuario
+
+    public List<Emprestimo> buscaEmprestimosPorUsuario(int idUsuario) {
         List<Emprestimo> resultado = new ArrayList<>();
         for (Emprestimo emprestimo : emprestimos) {
             if (emprestimo.getUsuario().getIdUsuario() == idUsuario) {
@@ -27,19 +43,5 @@ public class EmprestimoController {
             }
         }
         return resultado;
-    }
-
-    // Método para listar todos os empréstimos ativos
-    public void listarEmprestimos() {
-        if (emprestimos.isEmpty()) {
-            System.out.println("Nenhum empréstimo registrado.");
-            return;
-        }
-        System.out.println("Lista de Empréstimos:");
-        for (Emprestimo emprestimo : emprestimos) {
-            System.out.println("Livro: " + emprestimo.getLivro().getTitulo() +
-                    " | Usuário: " + emprestimo.getUsuario().getNome() +
-                    " | Data de Devolução: " + emprestimo.getDataDevolucao());
-        }
     }
 }
